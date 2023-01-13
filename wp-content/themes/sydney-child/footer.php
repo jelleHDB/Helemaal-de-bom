@@ -62,27 +62,27 @@ $link14 = get_field('link_facebook-footer', 'option');
 			</div>
 			<div id="footer-c2">
 				<div id="footer-adres">
-					<?php if( get_field('icon_1-footer', 'option') ): ?>
-						<img src="<?php the_field('icon_1-footer', 'option'); ?>" />
-					<?php endif; ?>
 					<?php if( $link9 ): ?>
-						<a class="link-footer" href="<?php echo esc_url( $link9 ); ?>"><?php the_field('adres-footer', 'option'); ?></a>
+						<a class="link-footer" href="<?php echo esc_url( $link9 ); ?>">
+							<i class="fas fa-map-pin"></i>
+							<?php the_field('adres-footer', 'option'); ?>
+						</a>
 					<?php endif; ?>
 				</div>
 				<div id="footer-phone">
-					<?php if( get_field('icon_2-footer', 'option') ): ?>
-						<img src="<?php the_field('icon_2-footer', 'option'); ?>" />
-					<?php endif; ?>
 					<?php if( $link10 ): ?>
-						<a class="link-footer" href="<?php echo esc_url( $link10 ); ?>"><?php the_field('telefoonnummer-adres', 'option'); ?></a>
+						<a class="link-footer" href="<?php echo esc_url( $link10 ); ?>">
+							<i class="fas fa-phone-alt"></i>
+							<?php the_field('telefoonnummer-adres', 'option'); ?>
+						</a>
 					<?php endif; ?>
 				</div>
 				<div id="footer-mail">
-					<?php if( get_field('icon_3-footer', 'option') ): ?>
-						<img src="<?php the_field('icon_3-footer', 'option'); ?>" />
-					<?php endif; ?>
 					<?php if( $link11 ): ?>
-						<a class="link-footer" href="<?php echo esc_url( $link11 ); ?>"><?php the_field('mail-footer', 'option'); ?></a>
+						<a class="link-footer" href="<?php echo esc_url( $link11 ); ?>">
+							<i class="fas fa-envelope"></i>
+							<?php the_field('mail-footer', 'option'); ?>
+						</a>
 					<?php endif; ?>
 				</div>
 				<div id="footer-socialicons">

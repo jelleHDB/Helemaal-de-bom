@@ -28,6 +28,12 @@ $mainFont : "Poppins", Open Sans, Arial, sans-serif;
 
 /* BEGIN: CURSOR */
 
+/* Disable horizontal scrolling */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden;
+}
+
 body {
 	cursor: url('http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/blue_arrow.png'), auto;
     background-color: #f7f7f7 !important;
@@ -40,6 +46,23 @@ a {
 /* END: CURSOR */
 
 /* START: HEADER */
+
+#masthead-mobile,
+.container-fluid {
+    background-color: #f7f7f7;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 539px)  {
+    .hamburger-icon {
+        position: absolute;
+        margin-top: 30px;
+    }
+}
+
+/* Remove original mobile hamburger icon */
+.mobile-header .align-right {
+    display: none;
+}
 #primary-menu li a {
     font-size: 24px;
 }
@@ -54,7 +77,7 @@ a {
     float: left;
 }
 
-#page:after {
+.page-id-7 #page:after {
     content: "";
     display: table;
     clear: both;
@@ -250,11 +273,13 @@ a {
 .titel-home-regel3-1,
 .titel-home-regel3-2 {
     display: inline;
+    color: black;
 }
 
 #firstpart-c2 h2 {
     font-family: $mainFont;
     font-weight: 800;
+    color: black;
 }
 
 .afbeelding-p1 {
@@ -278,15 +303,134 @@ a {
 
 }
 
-.link-home-p1 {
+.link-home-p1,
+.link-home-p2,
+.link-home-p3 {
     color: black;
     font-family: $mainFont;
     text-transform: uppercase;
 }
 
-.link-home-p1:hover {
+.link-home-p1:hover,
+.link-home-p2:hover,
+.link-home-p3:hover {
     color: $secondColor;
 }
+
+/* ANIMATIONS FOR TITLE */
+.titel-home-regel1 {
+    animation: bounce-in-right 2s ease;
+  }
+  @keyframes bounce-in-right {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
+  .titel-home-regel2 {
+    animation: bounce-in-right-2 2.5s ease;
+  }
+
+  @keyframes bounce-in-right-2 {
+    0% {
+      opacity: 0;
+      transform: translateY(-4000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  #orange-text{
+    animation: bounce-in-right-3 3.9s ease;
+}
+
+@keyframes bounce-in-right-3 {
+    0% {
+      opacity: 0;
+      transform: translateY(-7000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(15px);
+    }
+    80% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+/* ANIMATION FOR LINKS */
+.link-home-p1 {
+    animation: bounce-in-right-link 4s ease;
+    position: relative;
+}
+@keyframes bounce-in-right-link {
+    0% {
+        opacity: 0;
+        left: 4000px
+      }
+      60% {
+        opacity: 1;
+        left: 0px;
+      }
+      80% { left: 0px; }
+      100% { left: 0px; }
+}
+
+.link-home-p2 {
+    animation: bounce-in-right-link-2 5s ease;
+    position: relative;
+}
+@keyframes bounce-in-right-link-2 {
+    0% {
+        opacity: 0;
+        left: 5000px
+      }
+      60% {
+        opacity: 1;
+        left: 0px;
+      }
+      80% { left: 0px; }
+      100% { left: 0px; }
+}
+
+.link-home-p3 {
+    animation: bounce-in-right-link-3 6s ease;
+    position: relative;
+}
+@keyframes bounce-in-right-link-3 {
+    0% {
+        opacity: 0;
+        left: 6000px
+      }
+      60% {
+        opacity: 1;
+        left: 0px;
+      }
+      80% { left: 00px; }
+      100% { left: 0px; }
+}
+
+#firstpart {
+    display: flex;
+}
+
+#firstpart-c2 {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
 
 
 
@@ -298,7 +442,9 @@ a {
         margin-top: 100px;
     }
 
-    .link-home-p1 {
+    .link-home-p1,
+    .link-home-p2,
+    .link-home-p3 {
         font-size: 14px;
     }
 
@@ -324,10 +470,9 @@ a {
 
     #firstpart-c2 h2 {
         font-size: 18px;
-        white-space: pre;
     }
 
-    .afbeelding_playbutton {
+    #myImg {
         max-width: 30px;
         max-height: 30px;
         height: 100%;
@@ -370,7 +515,7 @@ a {
         font-size: 3vw;
     }
 
-    .afbeelding_playbutton {
+    #myImg {
         max-width: 50px;
         max-height: 50px;
         height: 100%;
@@ -398,6 +543,20 @@ a {
     }
 }
 
+@media only screen and (max-width: 850px) and (min-width: 650px) {
+    .link-home-p1, .link-home-p2, .link-home-p3 {
+        padding-right: 20px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 550px) {
+    .link-home-p1, .link-home-p2, .link-home-p3 {
+        padding-right: 20px;
+        font-size: 10px;
+    }
+}
+
 @media only screen and (max-width: 1200px) and (min-width: 850px)  {
     #firstpart {
         margin-top: 150px;
@@ -409,8 +568,10 @@ a {
         padding-right: 15px;
     }
 
-    .link-home-p1 {
-        padding-right: 15px;
+    .link-home-p1,
+    .link-home-p2,
+    .link-home-p3 {
+        padding-right: 20px;
         font-size: 18px;
     }
 
@@ -426,7 +587,7 @@ a {
         font-size: 3vw;
     }
 
-    .afbeelding_playbutton {
+    #myImg {
         max-width: 50px;
         max-height: 50px;
         height: 100%;
@@ -460,8 +621,10 @@ a {
         margin-bottom: 150px;
     }
 
-    .link-home-p1 {
-        padding-right: 15px;
+    .link-home-p1,
+    .link-home-p2,
+    .link-home-p3 {
+        padding-right: 25px;
         font-size: 18px;
     }
 
@@ -478,7 +641,7 @@ a {
         font-size: 3vw;
     }
 
-    .afbeelding_playbutton {
+    #myImg {
         max-width: 100px;
         max-height: 100px;
         height: 100%;
@@ -516,8 +679,10 @@ a {
         margin-top: 20px;
     }
 
-    .link-home-p1 {
-        padding-right: 15px;
+    .link-home-p1,
+    .link-home-p2,
+    .link-home-p3 {
+        padding-right: 45px;
         font-size: 18px;
     }
 
@@ -534,7 +699,7 @@ a {
         font-size: 60px;
     }
 
-    .afbeelding_playbutton {
+    #myImg{
         max-width: 100px;
         max-height: 100px;
         height: 100%;
@@ -596,6 +761,7 @@ a {
     #information-p2 {
         padding-left: 15px;
         padding-right: 15px;
+        margin-bottom: 50px;
     }
 }
 
@@ -619,6 +785,7 @@ a {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 50px;
     }
 }
 
@@ -642,6 +809,7 @@ a {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 80px;
     }
 
     .titel-information-p2 {
@@ -738,6 +906,7 @@ img {vertical-align: middle;}
 @media screen and (max-width: 550px) {
     .mySlides img {
         height: 300px;
+        box-shadow: 10px 10px 25px #ccc;
     }
 
     .numbertext {
@@ -753,6 +922,7 @@ img {vertical-align: middle;}
     .mySlides img {
         max-height: 500px;
         height: 100%;
+        box-shadow: 10px 10px 25px #ccc;
     }
 
     .numbertext {
@@ -767,6 +937,7 @@ img {vertical-align: middle;}
     .mySlides img {
         max-height: 800px;
         height: 100%;
+        box-shadow: 10px 10px 25px #ccc;
     }
 
     .numbertext {
@@ -779,6 +950,10 @@ img {vertical-align: middle;}
 
 
 /* START: DIENSTEN */
+
+.informatie-p2 {
+    text-transform: uppercase;
+}
 #home-p3 {
     background-attachment: fixed;
     background-position: center;
@@ -786,4 +961,1172 @@ img {vertical-align: middle;}
     background-size: cover;
 }
 
+#home-p3-column1,
+#home-p3-column2,
+#home-p3-column3 {
+    background: transparent;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.titel_vierde_gedeelte,
+.titel-p4_1,
+.titel-p4_2,
+.titel-p4_3 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: $mainFont;
+}
+
+.informatie_vierde_gedeelte {
+    color: white;
+    text-transform: uppercase;
+}
+
+.informatie_1_1,
+.informatie_2_1,
+.informatie_3_1 {
+    color: white;
+}
+
+#home-p3-content a {
+    color: white;
+    text-transform: uppercase;
+}
+
+#home-p3-content a:hover {
+    color: $secondColor;
+}
+
+.icon_voor_link-p4 {
+    max-height: 25px;
+    max-width: 25px;
+    height: 100%;
+    width: 100%;
+}
+
+#link-onderin-diensten {
+    text-align: center;
+}
+
+#link-onderin-diensten a {
+    color: white;
+}
+
+#link-onderin-diensten a:hover {
+    color: $secondColor;
+}
+
+.link_call_to_action_onderin_2 {
+    color: black !important;
+}
+
+.link_call_to_action_onderin_2:hover {
+    color: $secondColor !important;
+}
+
+.informatie_1_1, 
+.informatie_2_1, 
+.informatie_3_1 {
+    margin-bottom: 30px !important;
+}
+
 /* START RESPONSIVE: DIENSTEN */
+
+@media screen and (max-width: 800px) {
+    #home-p3 {
+        padding-top: 50px;
+    }
+
+    .titel_vierde_gedeelte {
+        font-size: 48px;
+    }
+
+    .titel-p4_1,
+    .titel-p4_2,
+    .titel-p4_3 {
+        font-size: 24px;
+    }
+
+    #home-p3-column1,
+    #home-p3-column2,
+    #home-p3-column3 {
+        padding: 40px 20px 40px 20px;
+        margin: 20px 20px 0px 20px;
+    }
+
+    #home-p3-information {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .icon_voor_link-p4 {
+        margin-bottom: 4px;
+    }
+
+    #link-onderin-diensten {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    #link-onderin-diensten a {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 800px)  {
+    #home-p3 {
+        padding-top: 70px;
+    }
+
+    #link-onderin-diensten {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    #link-onderin-diensten a {
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    .titel-p4_1,
+    .titel-p4_2,
+    .titel-p4_3 {
+        font-size: 24px;
+    }
+
+    .titel_vierde_gedeelte {
+        font-size: 48px;
+    }
+
+    #home-p3-column1,
+    #home-p3-column2,
+    #home-p3-column3 {
+        padding: 40px 20px 40px 20px;
+        float: left;
+        width: 30%;
+        height: 400px;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+    }
+
+    #home-p3-content:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #home-p3-information {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .icon_voor_link-p4 {
+        margin-bottom: 4px;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px)  {
+    #home-p3 {
+        padding-top: 100px;
+    }
+
+    #link-onderin-diensten {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #link-onderin-diensten a {
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    .titel_vierde_gedeelte {
+        font-size: 48px;
+    }
+
+    #home-p3-column1,
+    #home-p3-column2,
+    #home-p3-column3 {
+        padding: 40px 20px 40px 20px;
+        float: left;
+        width: 30%;
+        height: 350px;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+    }
+
+    #home-p3-content:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .titel-p4_1,
+    .titel-p4_2,
+    .titel-p4_3 {
+        font-size: 28px;
+    }
+
+    #home-p3-information {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .icon_voor_link-p4 {
+        margin-bottom: 4px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #home-p3 {
+        padding-top: 100px;
+    }
+
+    #link-onderin-diensten {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #link-onderin-diensten a {
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+
+    .titel_vierde_gedeelte {
+        font-size: 48px;
+    }
+
+    #link-onderin-diensten img {
+        margin-bottom: 8px !important;
+    }
+
+    #home-p3-column1,
+    #home-p3-column2,
+    #home-p3-column3 {
+        padding: 75px 20px 40px 20px;
+        float: left;
+        width: 30%;
+        height: 400px;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+    }
+
+    #home-p3-content:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #home-p3-information {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .icon_voor_link-p4 {
+        margin-bottom: 4px;
+    }
+}
+
+/* START: VIDEO */
+#home-p5 {
+    background-color: #111111;
+}
+
+.titel-p5 {
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.informatie-p5 {
+    color: white;
+}
+
+.icon_voor_link-p5 {
+    max-width: 20px;
+    max-height: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.link_onder_informatie-5 {
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.link_onder_informatie-5:hover {
+    color: $secondColor;
+}
+
+
+
+
+/* START: VIDEO RESPONSIVE */
+
+@media screen and (max-width: 800px) {
+    #home-p5 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #home-p5-c2 {
+        padding: 70px 25px 70px 25px;
+    }
+
+    #home-p5-c1 {
+        margin-bottom: -10px;
+    }
+
+    .informatie-p5 {
+        margin-bottom: 35px;
+        margin-top: 35px;
+    }
+
+    .icon_voor_link-p5 {
+        margin-bottom: 4px;
+    }
+
+    .video-home {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 800px)  {
+    #home-p5-c1,
+    #home-p5-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #home-p5:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .video-home {
+        width: 100%;
+        max-height: 500px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #home-p5 {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 500px;
+    }
+
+    #home-p5-c2 {
+        padding: 70px 20px 70px 40px;
+    }
+
+
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1000px)  {
+    #home-p5-c1,
+    #home-p5-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #home-p5:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .video-home {
+        width: 100%;
+        max-height: 600px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #home-p5 {
+        display: flex;
+        flex-direction: row;
+        height: 600px;
+    }
+
+    #home-p5-c2 {
+        padding: 100px 20px 130px 20px;
+    }
+
+    .informatie-p5 {
+        font-size: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .link_onder_informatie-5 {
+        font-size: 20px;
+    }
+
+    .icon_voor_link-p5 {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #home-p5-c1,
+    #home-p5-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #home-p5:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .video-home {
+        width: 100%;
+        max-height: 1000px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #home-p5 {
+        display: flex;
+        flex-direction: row;
+        height: 1000px;
+    }
+
+    #home-p5-c2 {
+        padding: 350px 20px 70px 60px;
+    }
+
+    .informatie-p5 {
+        font-size: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .link_onder_informatie-5 {
+        font-size: 20px;
+    }
+
+    .icon_voor_link-p5 {
+        margin-bottom: 5px;
+    }
+}
+
+/* START: GOOGLE REVIEWS */
+
+
+/* START: GOOGLE REVIEWS RESPONSIVE */
+@media screen and (max-width: 800px) {
+    #google-reviews {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+@media only screen and (max-width: 1600px) and (min-width: 800px)  {
+    #google-reviews {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #google-reviews {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        max-width: 1600px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* BEGIN: CALL-TO-ACTION */
+#call-to-action {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#call-to-action h2 {
+    display: inline;
+    color: white;
+    font-family: $mainFont;
+}
+
+.titel_2_sub {
+    color: $secondColor !important;
+}
+
+#content-call-to-action {
+    text-align: center;
+}
+
+
+/* NEGIN: CALL-TO-ACTION RESPONSIVE */
+
+
+@media screen and (max-width: 800px) {
+    #call-to-action {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #call-to-action h2 {
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 800px)  {
+    #call-to-action {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #call-to-action h2 {
+        font-size: 35px;
+        font-weight: 100;
+    }
+
+    #buttons-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    #call-to-action-c1 {
+        margin-right: 10px;
+    }
+
+    #call-to-action-c2 {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #call-to-action {
+        padding-top: 130px;
+        padding-bottom: 130px;
+    }
+
+    #call-to-action h2 {
+        font-size: 35px;
+        font-weight: 100;
+    }
+
+    #buttons-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    #call-to-action-c1 {
+        margin-right: 10px;
+    }
+
+    #call-to-action-c2 {
+        margin-left: 10px;
+    }
+}
+
+/* BEGIN: BUTTONS */
+.btn {
+    color: #FFFFFF;
+      background: #02010100;
+      padding: 8px 65px 8px 65px;
+      font-family: $mainFont;
+      border: 2px solid #ffffff;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-block;
+      text-align: center;
+      -webkit-transition: all ease 0.8s;
+      -moz-transition: all ease 0.8s;
+      transition: all ease 1s;
+      width: 250px;
+      
+  }
+  .btn:hover {
+      box-shadow: inset 250px 0 0 0 #ffffff;
+      color: $mainColor;
+      transition: all ease 1s;
+      width: 250px;
+}
+
+/* END: BUTTONS */
+
+/* VIDEO LIGHTBOX */
+#fade {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+  }
+  
+  #light {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: white;
+    z-index: 1002;
+    overflow: visible;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
+  }
+
+  /* RESPONSIVE VIDEO */
+
+  @media only screen and (min-width: 1200px)  {
+    #light {
+        max-width: 1100px;
+        max-height: 600px;
+        width:100%;
+        height: 100%;
+        margin-left: -560px;
+        margin-top: -300px;
+    }
+
+    #VisaChipCardVideo {
+        max-width: 1100px;
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) and (min-width: 900px)  {
+    #light {
+        max-width: 900px;
+        max-height: 400px;
+        width:100%;
+        height: 100%;
+        margin-left: -450px;
+        margin-top: -300px;
+    }
+
+    #VisaChipCardVideo {
+        max-width: 900px;
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 900px) and (min-width: 600px)  {
+    #light {
+        max-width: 600px;
+        max-height: 250px;
+        width:100%;
+        height: 100%;
+        margin-left: -300px;
+        margin-top: -175px;
+    }
+
+    #VisaChipCardVideo {
+        max-width: 600px;
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) and (min-width: 300px)  {
+    #light {
+        max-width: 300px;
+        max-height: 200px;
+        width:100%;
+        height: 100%;
+        margin-left: -150px;
+        margin-top: -175px;
+    }
+
+    #VisaChipCardVideo {
+        max-width: 300px;
+        width: 100%;
+        height: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 300px)  {
+    #light {
+        max-width: 150px;
+        max-height: 100px;
+        width:100%;
+        height: 100%;
+        margin-left: -150px;
+        margin-top: -175px;
+    }
+
+    #VisaChipCardVideo {
+        max-width: 150px;
+        width: 100%;
+        height: 100%;
+    }
+  }
+  
+  
+  
+  #boxclose {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid $mainColor;
+    border-radius: 50px;
+    background: $mainColor;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1002;
+    opacity: 0.9;
+    width:45px;
+    text-align: center;
+    }
+
+    #boxclose:hover {
+        transform: rotate(90deg);
+        transition: all 0.3s ease-in-out;
+        cursor: inherit;
+    }
+
+    #VisaChipCardVideo {
+        border-radius: 10px;
+    }
+  
+  
+  #fade:hover ~ #boxclose {
+    display:none;
+  }
+  
+  .test:hover ~ .test2 {
+    display: none;
+  }
+
+  .fa.fa-close {
+    font-size: 20px;
+}
+
+/* STAR: CONTACT */
+#contact-locatie a,
+#telefoon-mail-contact a {
+    color: black;
+}
+
+#contact-locatie a:hover,
+#telefoon-mail-contact a:hover {
+    color: $secondColor;
+}
+
+.titel-contact {
+    font-family: $mainFont;
+}
+
+.foto-contact {
+    border-radius: 100%;
+}
+
+.page-id-194 #page .fas {
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-id-194 #page .fas:hover {
+    color: $secondColor;
+    transition: all 0.3s ease-in-out;
+}
+
+/* START: CONTACT RESPONSIVE */
+@media only screen and (max-width: 800px)  {
+    .titel-contact {
+        margin-top: 150px;
+        font-size: 42px;
+    }
+
+    #contact-c1 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #contact-locatie,
+    #telefoon-mail-contact,
+    #kvk-btw-contact {
+        padding: 10px 0px 10px 20px;
+    }
+    
+
+    .link_telefoonnummer-contact {
+        display: block;
+    }
+
+    #kvk-btw-contact p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .btw_nummer-contact {
+        padding-left: 38px;
+    }
+
+    .page-id-194 .fas {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    #google-maps iframe {
+        width: 100%;
+        height: 200px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #contact-c2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #portofolio-contact h5, 
+    #portofolio-contact p, 
+    #portofolio-contact em {
+        margin: 0px !important;
+    }
+
+    .foto-contact {
+        margin-bottom: 30px;
+    }
+
+    .regel_1-contact {
+        font-family: $mainFont;
+        font-size: 16px;
+    }
+
+    .regel_2-contact {
+        font-size: 18px;
+    }
+
+    .regel_3-contact {
+        font-size: 14px;
+    }
+
+    div.wpforms-container-full .wpforms-form input[type=text] {
+        max-width: 800px !important;
+        width: 100% !important;
+    }
+
+    div.wpforms-container-full .wpforms-form .wpforms-field-row.wpforms-field-medium {
+        max-width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 800px)  {
+    .titel-contact {
+        font-size: 52px;
+    }
+
+    #portofolio-contact {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #foto-contact-selfie {
+        margin-right: 40px;
+    }
+
+    #contact {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #contact-c1 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #contact-c1,
+    #contact-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #contact-c2 {
+        margin-top: 100px;
+    }
+
+    #contact:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #contact-locatie,
+    #telefoon-mail-contact,
+    #kvk-btw-contact {
+        padding: 20px 0px 10px 20px;
+    }
+    
+
+    .link_telefoonnummer-contact {
+        display: block;
+    }
+
+    #kvk-btw-contact p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .btw_nummer-contact {
+        padding-left: 38px;
+    }
+
+    .page-id-194 .fas {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    #google-maps iframe {
+        width: 100%;
+        height: 290px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #contact-c2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #portofolio-contact h5, 
+    #portofolio-contact p, 
+    #portofolio-contact em {
+        margin: 0px !important;
+    }
+
+    .regel_1-contact {
+        font-family: $mainFont;
+        font-size: 20px;
+    }
+
+    .regel_2-contact {
+        font-size: 18px;
+    }
+
+    .regel_3-contact {
+        font-size: 14px;
+    }
+
+    div.wpforms-container-full .wpforms-form input[type=text] {
+        max-width: 800px !important;
+        width: 100% !important;
+    }
+
+    div.wpforms-container-full .wpforms-form .wpforms-field-row.wpforms-field-medium {
+        max-width: 100% !important;
+    }
+}
+
+@media only screen and (min-width: 1200px)  {
+    .titel-contact {
+        font-size: 52px;
+    }
+
+    #portofolio-contact {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #foto-contact-selfie {
+        margin-right: 40px;
+    }
+
+    #contact {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        max-width: 1200px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #contact-c1 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #contact-c1,
+    #contact-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #contact-c2 {
+        margin-top: 100px;
+    }
+
+    #contact:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #contact-locatie,
+    #telefoon-mail-contact,
+    #kvk-btw-contact {
+        padding: 20px 0px 10px 20px;
+    }
+    
+
+    .link_telefoonnummer-contact {
+        display: block;
+    }
+
+    #kvk-btw-contact p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .btw_nummer-contact {
+        padding-left: 38px;
+    }
+
+    .page-id-194 .fas {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    #google-maps iframe {
+        width: 100%;
+        height: 290px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #contact-c2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #portofolio-contact h5, 
+    #portofolio-contact p, 
+    #portofolio-contact em {
+        margin: 0px !important;
+    }
+
+    .regel_1-contact {
+        font-family: $mainFont;
+        font-size: 20px;
+    }
+
+    .regel_2-contact {
+        font-size: 18px;
+    }
+
+    .regel_3-contact {
+        font-size: 14px;
+    }
+
+    div.wpforms-container-full .wpforms-form input[type=text] {
+        max-width: 800px !important;
+        width: 100% !important;
+    }
+
+    div.wpforms-container-full .wpforms-form .wpforms-field-row.wpforms-field-medium {
+        max-width: 100% !important;
+    }
+}
+
+/* ANIMATIONS FOR DIV'S IN THE CONTACT PAGE */
+#contact-c2 {
+    animation: bounce-in-right 1.5s ease;
+  }
+  @keyframes bounce-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-30px);
+    }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+#contact-c1 {
+    animation: bounce-in-left 1.5s ease;
+}
+  @keyframes bounce-in-left{
+    0% {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(30px);
+    }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.titel-contact {
+    animation: bounce-in-top 1.5s ease;
+    position: relative;
+}
+  @keyframes bounce-in-top{
+    0% {
+      opacity: 0;
+      top: -2000px;
+    }
+    60% {
+      opacity: 1;
+      top: 30px;
+    }
+    80% { top: -10px; }
+    100% { top: 0px; }}
+
+
+
+
+
+/* START: CONTACT FORM */
+div.wpforms-container-full .wpforms-form input[type=text],
+div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium  {
+    padding: 20px 20px 20px 20px !important;
+    border: 1px solid rgb(143, 143, 143) !important;
+}
+
+div.wpforms-container-full .wpforms-form button[type=submit] {
+    background-color: $mainColor !important;
+    display: block;
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 16px;
+    text-align: center;
+    cursor: inherit !important;
+    border: 1px solid $mainColor;
+    color: white !important;
+}
+
+div.wpforms-container-full .wpforms-form button[type=submit]:hover {
+    background: transparent !important;
+    color: $mainColor !important;
+    border: 1px solid $mainColor !important;
+}

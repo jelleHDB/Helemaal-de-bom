@@ -12,9 +12,28 @@ $link6 = get_field('slider_3_link');
 $link7 = get_field('link_1_1');
 $link8 = get_field('link_2_1');
 $link9 = get_field('link_2_2');
+$link10 = get_field('link_call_to_action_onderin');
+$link11 = get_field('link_call_to_action_onderin_2');
+$link12 = get_field('link_onder_informatie-5');
+$link13 = get_field('button_1-calltoaction');
+$link14 = get_field('button_2-calltoaction');
 
 get_header(); ?>
 
+
+
+<div id="light">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();">
+    <i class="fa fa-close"></i>
+    </a>
+  <video id="VisaChipCardVideo" width="600px" controls>
+        <source src="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/Helemaal_de_bom_V6.mp4" type="video/mp4">
+        <source src="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/Helemaal_de_bom_V6.mp4" type="video/ogg">
+        <source src="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/Helemaal_de_bom_V6.mp4" type="video/mov">
+    </video>
+</div>
+
+<div id="fade" onClick="lightbox_close();"></div>
 
 <div id="firstpart">
     <div id="firstpart-c1">  
@@ -25,62 +44,56 @@ get_header(); ?>
         </div>
         <div id="firstpart-c1-c2">
             <?php if( get_field('afbeelding_playbutton') ): ?>
-                <a target="blank" href="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/How-to-Screen-Record-in-Windows-10-or-Windows-11-_-Toms-Hardware-Google-Chrome-2023-01-10-10-43-49.mp4"><img class="afbeelding_playbutton" src="<?php the_field('afbeelding_playbutton'); ?>" /><a>
+                <a href="#" onclick="lightbox_open();"><img id="myImg" src="<?php the_field('afbeelding_playbutton'); ?>" /><a>
             <?php endif; ?>
         </div>
     </div>
     <div id="firstpart-c2">
-        <?php if( get_field('titel_1-p1') ): ?>
-			<h2 class="titel-home-regel1"><?php the_field('titel_1-p1'); ?><span style="color: #EF4830">.</span></h2>
-		<?php endif; ?>
-        <?php if( get_field('titel_2-p1') ): ?>
-			<h2 class="titel-home-regel2"><?php the_field('titel_2-p1'); ?><span style="color: #EF4830">.</span></h2>
-		<?php endif; ?>
         <div id="orange-text">
             <?php if( get_field('titel_3-p1') ): ?>
                 <h2 class="titel-home-regel3-1"><?php the_field('titel_3-p1'); ?><span style="color: #305BAA"><?php the_field('titel_oranje-p1'); ?></span><span style="color: #EF4830">.</span></h2>
             <?php endif; ?>
         </div>
         <div id="home-link-desktop">
-            <?php if( get_field('icon_naast_link-home') ): ?>
-                <img class="icon_naast_link-home" src="<?php the_field('icon_naast_link-home'); ?>" />
-            <?php endif; ?>
             <?php if( $link1 ): ?>
-                <a class="link-home-p1" href="<?php echo esc_url( $link1 ); ?>"><?php the_field('tekst_link_1-home'); ?></a>
-            <?php endif; ?>
-            <?php if( get_field('icon_naast_link-home') ): ?>
-                <img class="icon_naast_link-home" src="<?php the_field('icon_naast_link-home'); ?>" />
+                <a class="link-home-p1" href="<?php echo esc_url( $link1 ); ?>">
+                    <i class="fas fa-arrow-circle-right	"></i>
+                    <?php the_field('tekst_link_1-home'); ?>
+                </a>
             <?php endif; ?>
             <?php if( $link2 ): ?>
-                <a class="link-home-p1" href="<?php echo esc_url( $link2 ); ?>"><?php the_field('tekst_link_2-home'); ?></a>
-            <?php endif; ?>
-            <?php if( get_field('icon_naast_link-home') ): ?>
-                <img class="icon_naast_link-home" src="<?php the_field('icon_naast_link-home'); ?>" />
+                <a class="link-home-p2" href="<?php echo esc_url( $link2 ); ?>">
+                    <i class="fas fa-arrow-circle-right	"></i>
+                    <?php the_field('tekst_link_2-home'); ?>
+                </a>
             <?php endif; ?>
             <?php if( $link3 ): ?>
-                <a class="link-home-p1" href="<?php echo esc_url( $link3 ); ?>"><?php the_field('tekst_link_3-home'); ?></a>
+                <a class="link-home-p3" href="<?php echo esc_url( $link3 ); ?>">
+                    <i class="fas fa-arrow-circle-right	"></i>
+                    <?php the_field('tekst_link_3-home'); ?>
+                </a>
             <?php endif; ?>
         </div>
     </div>
 </div>
 <div id="home-link-mobile">
-        <?php if( get_field('icon_naast_link-home') ): ?>
-            <img class="icon_naast_link-home" src="<?php the_field('icon_naast_link-home'); ?>" />
-        <?php endif; ?>
         <?php if( $link1 ): ?>
-            <a class="link-home-p1" href="<?php echo esc_url( $link1 ); ?>"><?php the_field('tekst_link_1-home'); ?></a>
-        <?php endif; ?>
-        <?php if( get_field('icon_naast_link-home') ): ?>
-            <img class="icon_naast_link-home" src="<?php the_field('icon_naast_link-home'); ?>" />
+            <a class="link-home-p1" href="<?php echo esc_url( $link1 ); ?>">
+                <i class="fas fa-arrow-circle-right	"></i>
+                <span><?php the_field('tekst_link_1-home'); ?></span>
+            </a>
         <?php endif; ?>
         <?php if( $link2 ): ?>
-            <a class="link-home-p1" href="<?php echo esc_url( $link2 ); ?>"><?php the_field('tekst_link_2-home'); ?></a>
-        <?php endif; ?>
-        <?php if( get_field('icon_naast_link-home') ): ?>
-            <img class="icon_naast_link-home" src="<?php the_field('icon_naast_link-home'); ?>" />
+            <a class="link-home-p1" href="<?php echo esc_url( $link2 ); ?>">
+                <i class="fas fa-arrow-circle-right	"></i>
+                <span><?php the_field('tekst_link_2-home'); ?></span>
+            </a>
         <?php endif; ?>
         <?php if( $link3 ): ?>
-            <a class="link-home-p1" href="<?php echo esc_url( $link3 ); ?>"><?php the_field('tekst_link_3-home'); ?></a>
+            <a class="link-home-p1" href="<?php echo esc_url( $link3 ); ?>">
+                <i class="fas fa-arrow-circle-right	"></i>
+                <span><?php the_field('tekst_link_3-home'); ?></span>
+            </a>
         <?php endif; ?>
 </div>
 <div id="tweede-gedeelte">
@@ -130,6 +143,14 @@ get_header(); ?>
         <span class="dot"></span> 
         </div>
     </div>
+    <div id="link-onderin-diensten">
+        <?php if( $link11 ): ?>
+            <a class="link_call_to_action_onderin_2" href="<?php echo esc_url( $link11 ); ?>">
+                <i class="fas fa-arrow-circle-right	"></i>
+                <span><?php the_field('tekst_link_call_to_action_2'); ?>
+            </a>
+        <?php endif; ?>
+    </div>
 </div>
 <div style="background-image: linear-gradient( #305baae0, #305baae0 ), url(<?php the_field('achtergrond-p4'); ?>)" id="home-p3">
     <div id="home-p3-content">
@@ -146,10 +167,13 @@ get_header(); ?>
                 <h2 class="titel-p4_1"><?php the_field('titel-p4_1'); ?><span style="color: #EF4830">.</span></h2>
             <?php endif; ?>
             <?php if( get_field('informatie_1_1') ): ?>
-                <p class="informatie_1_1"><?php the_field('informatie_1_1'); ?><span>.</span></p>
+                <p class="informatie_1_1"><?php the_field('informatie_1_1'); ?></p>
             <?php endif; ?>
             <?php if( $link7 ): ?>
-                <a class="tekst_link_1" href="<?php echo esc_url( $link7 ); ?>"><?php the_field('tekst_link_1'); ?></a>
+                <a class="tekst_link_1" href="<?php echo esc_url( $link7 ); ?>">
+                    <i class="fas fa-arrow-circle-right	"></i>
+                    <span><?php the_field('tekst_link_1'); ?></span>
+                </a>
             <?php endif; ?>
         </div>
         <div id="home-p3-column2">
@@ -157,10 +181,13 @@ get_header(); ?>
                 <h2 class="titel-p4_2"><?php the_field('titel-p4_2'); ?><span style="color: #EF4830">.</span></h2>
             <?php endif; ?>
             <?php if( get_field('informatie_2_1') ): ?>
-                <p class="informatie_2_1"><?php the_field('informatie_2_1'); ?><span>.</span></p>
+                <p class="informatie_2_1"><?php the_field('informatie_2_1'); ?></p>
             <?php endif; ?>
             <?php if( $link8 ): ?>
-                <a class="tekst_link_2" href="<?php echo esc_url( $link8 ); ?>"><?php the_field('tekst_link_2'); ?></a>
+                <a class="tekst_link_2" href="<?php echo esc_url( $link8 ); ?>">
+                    <i class="fas fa-arrow-circle-right	"></i>
+                    <span><?php the_field('tekst_link_2'); ?></span>
+                </a>
             <?php endif; ?>
         </div>
         <div id="home-p3-column3">
@@ -168,11 +195,82 @@ get_header(); ?>
                 <h2 class="titel-p4_3"><?php the_field('titel-p4_3'); ?><span style="color: #EF4830">.</span></h2>
             <?php endif; ?>
             <?php if( get_field('informatie_3_1') ): ?>
-                <p class="informatie_3_1"><?php the_field('informatie_3_1'); ?><span>.</span></p>
+                <p class="informatie_3_1"><?php the_field('informatie_3_1'); ?></p>
             <?php endif; ?>
             <?php if( $link9 ): ?>
-                <a class="tekst_link_3" href="<?php echo esc_url( $link9 ); ?>"><?php the_field('tekst_link_3'); ?></a>
+                <a class="tekst_link_3" href="<?php echo esc_url( $link9 ); ?>">
+                    <i class="fas fa-arrow-circle-right	"></i>
+                    <span><?php the_field('tekst_link_3'); ?> </span>
+                </a>
             <?php endif; ?>
+        </div>
+    </div>
+    <div id="link-onderin-diensten">
+        <?php if( $link10 ): ?>
+            <a class="link_call_to_action_onderin" href="<?php echo esc_url( $link10 ); ?>">
+                <i class="fas fa-arrow-circle-right	"></i>
+                <span> <?php the_field('tekst_link_call_to_action'); ?> </span>
+            </a>
+        <?php endif; ?>
+    </div>
+</div>
+<div id="home-p5">
+    <div id="home-p5-c1">
+        <?php if( get_field('video-home') ): ?>
+            <video class="video-home" autoplay loop muted>
+                <source src="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/basbasbas.mov" type="video/mp4">
+                <source src="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/basbasbas.mov" type="video/ogg">
+                <source src="http://localhost/Helemaal-de-bom/wp-content/uploads/2023/01/basbasbas.mov" type="video/mov">
+            </video>
+        <?php endif; ?>
+    </div>
+    <div id="home-p5-c2">
+        <?php if( get_field('titel-p5') ): ?>
+            <h2 class="titel-p5"><?php the_field('titel-p5'); ?><span style="color: #EF4830">.</span></h2>
+        <?php endif; ?>
+        <?php if( get_field('informatie-p5') ): ?>
+            <p class="informatie-p5"><?php the_field('informatie-p5'); ?></p>
+        <?php endif; ?>
+        <?php if( $link12): ?>
+            <a class="link_onder_informatie-5" href="<?php echo esc_url( $link12 ); ?>">
+                <i class="fas fa-arrow-circle-right	"></i>
+                <span> <?php the_field('tekst_link_onder_informatie-p5'); ?> </span>
+            </a>
+        <?php endif; ?>
+    </div>
+</div>
+<div id="google-reviews">
+    <?php if( get_field('google_reviews-home') ): ?>
+        <?php the_field('google_reviews-home'); ?>
+    <?php endif; ?>
+</div>
+<div style="background-image: linear-gradient( #000000b0, #000000b0 ), url(<?php the_field('achtergrond-calltoaction'); ?>)" id="call-to-action">
+    <div id="content-call-to-action">
+            <?php
+                if( have_rows('call_to_action_group') ):
+                while( have_rows('call_to_action_group') ) : the_row();
+            ?>
+                <?php if( get_sub_field('titel_1_sub') ): ?>
+                    <h2 class="titel_1_sub"><?php the_sub_field('titel_1_sub'); ?></h2>
+                <?php endif; ?>
+                <?php if( get_sub_field('titel_2_sub') ): ?>
+                    <h2 class="titel_2_sub"><?php the_sub_field('titel_2_sub'); ?></h2>
+                <?php endif; ?>
+                <?php if( get_sub_field('titel_3_sub') ): ?>
+                    <h2 class="titel_3_sub"><?php the_sub_field('titel_3_sub'); ?></h2>
+                <?php endif; ?>
+            <?php endwhile; endif; ?>
+        <div id="buttons-cta">
+            <div id="call-to-action-c1">
+                <a class="btn" href="<?php echo esc_url( $link13 ); ?>">
+                    <span> <?php the_field('tekst_button_1-calltoaction'); ?> </span>
+                </a>
+            </div>
+            <div id="call-to-action-c2">
+                <a class="btn" href="<?php echo esc_url( $link14 ); ?>">
+                    <span> <?php the_field('tekst_button_2-calltoaction'); ?> </span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -213,6 +311,32 @@ get_header(); ?>
             }
             x[slideIndex-1].style.display = "block";  
             }
+        </script>
+        
+        <script> 
+        window.document.onkeydown = function(e) {
+        if (!e) {
+            e = event;
+        }
+        if (e.keyCode == 27) {
+            lightbox_close();
+        }
+        }
+
+        function lightbox_open() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        window.scrollTo(0, 0);
+        document.getElementById('light').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+        lightBoxVideo.play();
+        }
+
+        function lightbox_close() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+        lightBoxVideo.pause();
+        }
         </script>
 
 

@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <?php wp_head(); ?>
 </head>
@@ -56,7 +58,7 @@
 	</div>
 
 	<!-- Use any element to open/show the overlay navigation menu -->
-	<span style="font-size:30px;" onclick="openNav()">&#9776;</span>
+	<span class="hamburger-icon" style="font-size:30px;" onclick="openNav()">&#9776;</span>
 
 	<script>
 	function openNav() {
