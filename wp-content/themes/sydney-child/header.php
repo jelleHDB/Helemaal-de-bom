@@ -49,13 +49,21 @@
 
 			<!-- Overlay content -->
 			<div class="overlay-content">
-				<a href="#">About</a>
-				<a href="#">Services</a>
-				<a href="#">Clients</a>
+				<a href="#">Home</a>
+				<a href="#">Diensten</a>
+				<a href="#">Projecten</a>
+				<a href="#">Over ons</a>
+				<a href="#">Blog</a>
 				<a href="#">Contact</a>
+				<div id="gegevens-header" style="background-color: blue;">
+					<h2> test </h2>
+				</div>
 			</div>
+			
 		</div>
+		
 	</div>
+	
 
 	<!-- Use any element to open/show the overlay navigation menu -->
 	<span class="hamburger-icon" style="font-size:30px;" onclick="openNav()">&#9776;</span>
