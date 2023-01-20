@@ -22,8 +22,8 @@ $mainFont : "Poppins", sans-serif;
 
 /* Font family */
 
-*, h1, h2, h3, h4, h5, h6, p, a, li, span, div {
-	font-family: "Poppins", sans-serif;
+h1, h2, h3, h4, h5, h6, p, a, li, span, div {
+	font-family: "Poppins", sans-serif !important;
 }
 
 /* BEGIN: CURSOR */
@@ -2466,6 +2466,8 @@ div#content-call-to-action h2 {
 
 .titel-dienst-slider {
     color: white;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .afbeelding-diensten {
@@ -2517,7 +2519,7 @@ div#content-call-to-action h2 {
         text-align: center;
         padding: 100px 0px;
         margin: 0px;
-        margin-top: 70px;
+        margin-top: 150px;
     }
 
     .titel-diensten {
@@ -2547,7 +2549,7 @@ div#content-call-to-action h2 {
         text-align: center;
         padding: 150px 0px;
         margin: 0px;
-        margin-top: 50px;
+        margin-top: 150px;
     }
 
     .titel-diensten {
@@ -2688,5 +2690,427 @@ div#content-call-to-action h2 {
 
     .titel-diensten-onderin {
         font-size: 48px;
+    }
+}
+
+/* START: WEBSITES */
+#links-onderslider-websites a {
+    color: black;
+    text-transform: uppercase;
+}
+
+#links-onderslider-websites a:hover {
+    color: $secondColor;
+}
+
+#div_websites_blauw {
+    background-color: $mainColor;
+}
+
+.titel-websites-blauw,
+#div_websites_blauw p{
+    color: white;
+}
+
+#informatie-onderin-websites-c2 h2 {
+    display: inline;
+}
+
+.titel-websites-rood {
+    color: $secondColor;
+}
+
+.link_1-websites {
+    animation: bounce-in-left-link 3s ease;
+    position: relative;
+}
+
+@keyframes bounce-in-left-link {
+    0% {
+        opacity: 0;
+        left: -2000px
+      }
+      60% {
+        opacity: 1;
+        left: 0px;
+      }
+      80% { left: 0px; }
+      100% { left: 0px; }
+}
+
+.link_2-websites {
+    animation: bounce-in-left-link-2 4s ease;
+    position: relative;
+}
+@keyframes bounce-in-left-link-2 {
+    0% {
+        opacity: 0;
+        left: -4000px
+      }
+      60% {
+        opacity: 1;
+        left: 0px;
+      }
+      80% { left: 0px; }
+      100% { left: 0px; }
+}
+
+.link_3-websites {
+    animation: bounce-in-left-link-3 5s ease;
+    position: relative;
+}
+@keyframes bounce-in-left-link-3 {
+    0% {
+        opacity: 0;
+        left: -6000px
+      }
+      60% {
+        opacity: 1;
+        left: 0px;
+      }
+      80% { left: 00px; }
+      100% { left: 0px; }
+}
+
+
+
+
+
+/* START: RESPONSIVE WEBSITES */
+@media screen and (max-width: 800px) {
+    .titel-websites {
+        font-size: 32px;
+        text-align: center;
+        padding: 0px 10px 0px 10px;
+    }
+
+    #info_onder_slider-websites {
+        padding: 20px 0px 50px 0px;
+    }
+
+    #links-onderslider-websites a {
+        display: block;
+        margin: 30px 0px 30px 0px;
+        text-align: center;
+    }
+
+    #info_onder_slider-websites p {
+        padding: 5px 15px 5px 15px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #div_websites_blauw {
+        padding: 40px 15px 40px 15px;
+    }
+
+    .titel-websites-blauw,
+    .titel-websites-wit {
+        font-size: 30px;
+    }
+
+    #div_diensten-c2 p,
+    #div_diensten-c2 li,
+    #div_diensten-c2 a {
+        font-size: 18px;
+    }
+
+    #div_websites_wit {
+        padding: 40px 15px 40px 15px;
+    }
+
+    .afbeelding-websites {
+        height: 500px;
+        object-fit: cover;
+        border-style: solid;
+        border-width: 0;
+        border-radius: 10px;
+        box-shadow: 7px 11px 23px 0px rgb(0 0 0 / 50%);
+    }
+
+    #informatie-onderin-websites-c1 {
+        padding: 50px 25px 40px 25px;
+    }
+
+    #informatie-onderin-websites-c2 {
+        padding: 0px 30px 50px 30px;
+    }
+
+    .titel-websites-onderin {
+        font-size: 30px !important;
+    }
+
+    .link_websites_onderin {
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (max-width: 1600px) and (min-width: 800px)  {
+    .titel-websites {
+        font-size: 60px;
+        text-align: center;
+        padding: 0px 10px 0px 10px;
+        max-width: 780px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #info_onder_slider-websites {
+        padding: 20px 0px 50px 0px;
+    }
+
+    #links-onderslider-websites a {
+        margin: 30px 0px 30px 0px;
+        text-align: center;
+    }
+
+    #links-onderslider-websites {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 1100px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #info_onder_slider-websites p {
+        padding: 5px 15px 5px 15px;
+        text-align: center;
+        font-size: 18px;
+        max-width: 900px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #div_websites_blauw,
+    #div_websites_wit {
+        padding: 100px 15px 100px 15px;
+    }
+
+    .titel-websites-blauw,
+    .titel-websites-wit {
+        font-size: 30px;
+    }
+
+    #div_diensten-c2 p,
+    #div_diensten-c2 li,
+    #div_diensten-c2 a {
+        font-size: 18px;
+    }
+
+
+    .afbeelding-websites {
+        height: 500px;
+        object-fit: cover;
+        border-style: solid;
+        border-width: 0;
+        border-radius: 10px;
+        box-shadow: 7px 11px 23px 0px rgb(0 0 0 / 50%);
+        max-width: 700px;
+        width: 100%;
+    }
+
+    #informatie-onderin-websites-c1 {
+        padding: 100px 25px 100px 25px;
+    }
+
+    #informatie-onderin-websites-c2 {
+        padding: 100px 30px 100px 30px;
+    }
+
+    .titel-websites-onderin {
+        font-size: 30px !important;
+    }
+
+    .link_websites_onderin {
+        margin-top: 25px;
+    }
+
+    #div_diensten-c1,
+    #div_diensten-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #div_websites_blauw:after,
+    #div_websites_wit:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    #div_websites_blauw,
+    #div_websites_wit {
+        display: flex;
+        align-items: center;
+    }
+
+    #div_diensten-c1 {
+        text-align: center;
+    }
+
+    #informatie-onderin-websites {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #informatie-onderin-websites:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    #informatie-onderin-websites-c1,
+    #informatie-onderin-websites-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #informatie-onderin-websites-c1 {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .titel-websites {
+        font-size: 60px;
+        text-align: center;
+        padding: 0px 10px 0px 10px;
+        max-width: 780px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #info_onder_slider-websites {
+        padding: 20px 0px 50px 0px;
+    }
+
+    #links-onderslider-websites a {
+        margin: 30px 0px 30px 0px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #links-onderslider-websites {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 1100px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #info_onder_slider-websites p {
+        padding: 5px 15px 5px 15px;
+        text-align: center;
+        font-size: 18px;
+        max-width: 900px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #div_websites_blauw,
+    #div_websites_wit {
+        padding: 100px 15px 100px 15px;
+    }
+
+    .titel-websites-blauw,
+    .titel-websites-wit {
+        font-size: 50px;
+    }
+
+    #div_diensten-c2 p,
+    #div_diensten-c2 li,
+    #div_diensten-c2 a {
+        font-size: 20px;
+    }
+
+
+
+    .afbeelding-websites {
+        height: 500px;
+        object-fit: cover;
+        border-style: solid;
+        border-width: 0;
+        border-radius: 10px;
+        box-shadow: 7px 11px 23px 0px rgb(0 0 0 / 50%);
+        max-width: 700px;
+        width: 100%;
+    }
+
+    #informatie-onderin-websites-c1 {
+        padding: 100px 25px 100px 25px;
+    }
+
+    #informatie-onderin-websites-c2 {
+        padding: 100px 30px 100px 30px;
+    }
+
+    .titel-websites-onderin {
+        font-size: 48px !important;
+    }
+
+    .link_websites_onderin {
+        margin-top: 25px;
+    }
+
+    #div_diensten-c1,
+    #div_diensten-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #div_websites_blauw:after,
+    #div_websites_wit:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    #div_websites_blauw,
+    #div_websites_wit {
+        display: flex;
+        align-items: center;
+    }
+
+    #div_diensten-c1 {
+        text-align: center;
+    }
+
+    #informatie-onderin-websites {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #informatie-onderin-websites:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    #informatie-onderin-websites-c1,
+    #informatie-onderin-websites-c2 {
+        float: left;
+        width: 50%;
+    }
+
+    #informatie-onderin-websites-c1 {
+        text-align: center;
+    }
+
+    #div_diensten-c2 {
+        padding-right: 100px;
     }
 }
